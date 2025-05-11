@@ -1,0 +1,2 @@
+D:/intellident_ai/android/app/.cxx/Debug/c1b3wt37/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/intellident_ai/android/app/.cxx/Debug/c1b3wt37/armeabi-v7a/CMakeFiles/rebuild_cache.dir
