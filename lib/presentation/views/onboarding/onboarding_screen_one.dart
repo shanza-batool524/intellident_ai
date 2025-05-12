@@ -19,7 +19,7 @@ class _OnboardingScreenOneState extends State<OnboardingScreenOne> {
     return SafeArea(
       child: Scaffold(
         body: OnBoardingWidget(
-          imagePath: ImagesUrls.onoarding_one,
+          imagePath: "assets/images/onboarding_one.png",
           title: 'Welcome to Your Smart Dental Companion',
           description:
               "Get expert dental guidance anytime, anywhere. Our AI-powered app helps you take control of your oral health with smart tools and personalized insights.",

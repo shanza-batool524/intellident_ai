@@ -18,7 +18,7 @@ class _OnboardingScreenThreeState extends State<OnboardingScreenThree> {
     return SafeArea(
       child: Scaffold(
         body: OnBoardingWidget(
-          imagePath: ImagesUrls.onboarding_three,
+          imagePath:  "assets/images/onboarding_one.png",
           title: 'Get a Trusted Second Opinion',
           description:
               "Not sure about your diagnosis or treatment plan? Share your AI scan or dental report with certified dentists for a fast, unbiased second opinion.",

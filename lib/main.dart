@@ -49,10 +49,10 @@ class MyApp extends StatelessWidget {
           ),
           debugShowCheckedModeBanner: false,
           title: 'Intellident AI',
-          getPages: AppRoutes.appRoute(),
-          initialRoute: RouteName.splashScreen,
+          // getPages: AppRoutes.appRoute(),
           // initialRoute: RouteName.splashScreen,
-          // home: DoctorScreen(),
+          // initialRoute: RouteName.splashScreen,
+          home: OnboardingScreen(),
         );
       },
     );

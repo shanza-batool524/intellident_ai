@@ -61,7 +61,7 @@ class OnBoardingWidget extends StatelessWidget {
             alignment: Alignment.centerRight,
             child: GestureDetector(
               onTap: onNext,
-              child: Image.asset("assets/images/Button.png",height:70.h, width:70.w),
+              child: Image.asset("assets/images/button.png",height:70.h, width:70.w),
             ),
           ),
         )

@@ -19,7 +19,7 @@ class _OnboardingScreenFourState extends State<OnboardingScreenFour> {
     return SafeArea(
       child: Scaffold(
         body: OnBoardingWidget(
-          imagePath: ImagesUrls.onboarding_four,
+          imagePath: "assets/images/onboarding_one.png",
           title: 'Your Privacy, Our Priority',
           description:
               "We use bank-grade encryption to protect your data. Your scans and medical information stay secure and confidential—always.",

@@ -18,7 +18,7 @@ class _OnboardingScreenTwoState extends State<OnboardingScreenTwo> {
     return SafeArea(
       child: Scaffold(
         body: OnBoardingWidget(
-          imagePath: ImagesUrls.onboarding_two,
+          imagePath: "assets/images/onboarding_one.png",
           title: 'Snap, Scan, and Get Instant Report',
           description:
               "Use your phone camera to scan your teeth. Our advanced AI analyzes your oral condition and gives you instant, reliable assessments.",
