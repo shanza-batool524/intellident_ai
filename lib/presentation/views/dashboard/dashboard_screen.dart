@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:intellident_ai/core/utils/extension.dart';
+import 'package:intellident_ai/presentation/views/doctor/doctor_screen.dart';
 
 import '../../../core/constants/app_colors.dart';
  import '../../../core/routing/routers_name.dart';
@@ -170,7 +171,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 22.height,
                 GestureDetector(
                   onTap: (){
-                    Get.toNamed(RouteName.doctorScreen);
+                    // Get.toNamed(RouteName.doctorScreen);
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>DoctorScreen()));
                   },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(22.r),

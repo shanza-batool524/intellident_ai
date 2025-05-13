@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:intellident_ai/core/utils/extension.dart';
-
 import '../../../core/constants/app_colors.dart';
+import '../../../core/constants/fonts.dart';
 import '../../../core/constants/image_urls.dart';
 import '../../../core/routing/routers_name.dart';
 import '../../../general_widgets/custom_field_components.dart';
 import '../../../general_widgets/primary_button.dart';
-
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -25,119 +24,97 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              60.height,
-              Text(
-                "Hey there,",
-                style: TextStyle(
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.bold,
-                  color: AppColor.black,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              height: 200.h,
+              width: double.infinity,
+              color: AppColor.blue,
+              child: Align(
+                alignment: Alignment.center,
+                child: Image.asset(
+                  "assets/logo/white_logo.png",
+                  width: 250.w,
+                  height: 72.h,
+                  fit: BoxFit.contain,
                 ),
               ),
-              Text(
-                "Welcome Back",
-                style: TextStyle(
-                  fontSize: 26.sp,
-                  fontWeight: FontWeight.w900,
-                  color: AppColor.black,
-                ),
-              ),
-              30.height,
-              CustomFieldComponents(
-                hint: "Email",
-                controller: emailController,
-                prefixIcon: "assets/icons/Message.png",
-              ),
-              15.height,
-              CustomFieldComponents(
-                hint: "Password",
-                controller: passwordController,
-                prefixIcon: "assets/icons/Lock.png",
-                suffixIcon: "assets/icons/hide_password.png",
-              ),
-              15.height,
-              Text(
-                'Forgot your password?',
-                style: const TextStyle(
-                  color: AppColor.sec_text,
-                  decoration: TextDecoration.underline,
-                ),
-              ),
-              300.height,
-              PrimaryButton(
-                onTap: () {
-                  Get.toNamed(RouteName.proSubscriptionScreen);
-                },
-                childWidget: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+            ),
+            30.height,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Image.asset(ImagesUrls.login),
-                    10.width,
-                    Text(
-                      "Login",
-                      style: TextStyle(
-                        fontSize: 18.sp,
-                        color: AppColor.primary,
-                        fontWeight: FontWeight.bold,
+                    Text("Hey there,", style: AppTextStyles.font24),
+                    Text("Welcome Back", style: AppTextStyles.font16),
+                    30.height,
+                    CustomFieldComponents(
+                      hint: "Email",
+                      controller: emailController,
+                      prefixIcon: "assets/icons/Message.png",
+                    ),
+                    15.height,
+                    CustomFieldComponents(
+                      hint: "Password",
+                      controller: passwordController,
+                      prefixIcon: "assets/icons/Lock.png",
+                      suffixIcon: "assets/icons/hide_password.png",
+                    ),
+                    15.height,
+                    Text('Forgot your password?', style: AppTextStyles.forgotPasswordText),
+                    20.height,
+                    PrimaryButton(
+                      onTap: () {
+                        Get.toNamed(RouteName.proSubscriptionScreen);
+                      },
+                      childWidget: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("Login", style: AppTextStyles.ButtonText),
+                        ],
                       ),
+                      bgColor: AppColor.blue,
+                      gradient: false,
+                    ),
+                    120.height,
+                    Row(
+                      children: [
+                        Expanded(child: Divider(color: AppColor.grey, thickness: 1)),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          child: Text("Or", style: AppTextStyles.font16),
+                        ),
+                        Expanded(child: Divider(color: AppColor.grey, thickness: 1)),
+                      ],
+                    ),
+                    20.height,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        socialIcon(ImagesUrls.google),
+                        SizedBox(width: 24.w),
+                        socialIcon(ImagesUrls.apple),
+                      ],
+                    ),
+                    20.height,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Dont have an account yet? ", style: AppTextStyles.font16),
+                        GestureDetector(
+                          onTap: () {},
+                          child: Text("Register", style: AppTextStyles.font16),
+                        ),
+                      ],
                     ),
                   ],
                 ),
-                bgColor: AppColor.button,
-                gradient: true,
               ),
-              20.height,
-              Row(
-                children: [
-                  Expanded(child: Divider(color: AppColor.grey, thickness: 1)),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
-                    child: Text(
-                      "Or",
-                      style: TextStyle(fontSize: 14.sp, color: AppColor.black),
-                    ),
-                  ),
-                  Expanded(child: Divider(color: AppColor.grey, thickness: 1)),
-                ],
-              ),
-              20.height,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  socialIcon(ImagesUrls.google),
-                  SizedBox(width: 24.w),
-                  socialIcon(ImagesUrls.apple),
-                ],
-              ),
-              20.height,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Dont have an account yet? ",
-                    style: TextStyle(fontSize: 14.sp, color: AppColor.text),
-                  ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Text(
-                      "Register",
-                      style: TextStyle(
-                        fontSize: 14.sp,
-                        color: AppColor.secondary, // purple color
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

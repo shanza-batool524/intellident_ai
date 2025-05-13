@@ -7,6 +7,7 @@ import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/image_urls.dart';
 import '../../../core/routing/routers_name.dart';
 import '../../../general_widgets/primary_button.dart';
+import '../onboarding_screen.dart';
 
 class SplashDisclaimerScreen extends StatefulWidget {
   const SplashDisclaimerScreen({super.key});
@@ -83,7 +84,7 @@ class _SplashScreenOneState extends State<SplashDisclaimerScreen> {
                 64.height,
                 PrimaryButton(
                   onTap: () {
-                    Get.toNamed(RouteName.onBoardingScreenOne);
+                    Get.toNamed(RouteName.onboardingScreen);
                   },
                   childWidget: Text(
                     "Get Started",

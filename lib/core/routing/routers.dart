@@ -1,6 +1,7 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:intellident_ai/core/routing/routers_name.dart';
-import 'package:intellident_ai/presentation/views/dashboard/doctor_screen.dart';
+import 'package:intellident_ai/presentation/views/onboarding_screen.dart';
+import 'package:intellident_ai/presentation/views/doctor/doctor_screen.dart';
 
 import '../../presentation/views/authentication/login_screen.dart';
 import '../../presentation/views/authentication/profile_completion_screen.dart';
@@ -10,11 +11,7 @@ import '../../presentation/views/dashboard/notifications/notification_screen.dar
 import '../../presentation/views/interests/interests_selection_screen.dart';
 import '../../presentation/views/interests/problem_specifics_screen.dart';
 import '../../presentation/views/navigation/bottom_navigation_screen.dart';
-import '../../presentation/views/onboarding/onboarding_screen_four.dart';
-import '../../presentation/views/onboarding/onboarding_screen_one.dart';
-import '../../presentation/views/onboarding/onboarding_screen_three.dart';
-import '../../presentation/views/onboarding/onboarding_screen_two.dart';
-import '../../presentation/views/pro_subscription/pro_subscription_screen.dart';
+import '../../presentation/views/pro_subscription_screen.dart';
 import '../../presentation/views/profile/profile_screen.dart';
 import '../../presentation/views/splash/splash_disclaimer_screen.dart';
 import '../../presentation/views/splash/splash_screen.dart';
@@ -26,21 +23,6 @@ class AppRoutes {
     GetPage(
       name: RouteName.splashScreen,
       page: () => const SplashScreen(),
-    ),
-    GetPage(
-      name: RouteName.onBoardingScreenOne,
-      page: () => const OnboardingScreenOne(),
-    ),
-    GetPage(
-      name: RouteName.onBoardingScreenTwo,
-      page: () => const OnboardingScreenTwo(),
-    ),
-    GetPage(
-      name: RouteName.onBoardingScreenThree,
-      page: () => const OnboardingScreenThree(),
-    ), GetPage(
-      name: RouteName.onBoardingScreenFour,
-      page: () => const OnboardingScreenFour(),
     ),
     GetPage(
       name: RouteName.interestSelectionScreen,
@@ -69,7 +51,7 @@ class AppRoutes {
       page: () => const DashboardScreen(),
     ),GetPage(
       name: RouteName.bottomNavigationScreen,
-      page: () => const BottomNavigationScreen(),
+      page: () =>  BottomNavigationScreen(),
     ),GetPage(
       name: RouteName.notificationScreen,
       page: () => const NotificationScreen(),
@@ -79,6 +61,9 @@ class AppRoutes {
     ),GetPage(
       name: RouteName.doctorScreen,
       page: () => const DoctorScreen(),
+    ),GetPage(
+      name: RouteName.onboardingScreen,
+      page: () => const OnboardingScreen(),
     ),
   ];
 }

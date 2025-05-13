@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:intellident_ai/core/utils/extension.dart';
 
-import '../../../core/constants/app_colors.dart';
-import '../../../core/constants/image_urls.dart';
-import '../../../core/routing/routers_name.dart';
-import '../../../general_widgets/primary_button.dart';
+import '../../core/constants/app_colors.dart';
+import '../../core/constants/image_urls.dart';
+import '../../core/routing/routers_name.dart';
+import '../../general_widgets/primary_button.dart';
 
 
 class ProSubscriptionScreen extends StatefulWidget {
@@ -41,7 +41,7 @@ class _ProSubscriptionScreenState extends State<ProSubscriptionScreen> {
                       const TextSpan(text: 'Get '),
                       TextSpan(
                         text: 'PRO ',
-                        style: const TextStyle(color: AppColor.secondary),
+                        style: const TextStyle(color: AppColor.blue),
                       ),
                       const TextSpan(text: 'Access'),
                     ],
@@ -111,15 +111,14 @@ class _ProSubscriptionScreenState extends State<ProSubscriptionScreen> {
                   ),
                 ),
               ),
-                Spacer(),
-                PrimaryButton(
+20.height,                PrimaryButton(
                   onTap: () {
                     Get.toNamed(RouteName.bottomNavigationScreen);
                   },
-                  bgColor: AppColor.secondary,
-                  gradient: true,
+                  bgColor: AppColor.blue,
+                  gradient: false,
                   childWidget: Text(
-                    "Continue",
+                    "Subscribe",
                     style: TextStyle(
                       fontSize: 20.sp,
                       fontWeight: FontWeight.bold,

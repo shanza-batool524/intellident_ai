@@ -1,9 +1,20 @@
 class ImagesUrls {
   static const String logo = 'assets/logo/intellident_logo.png';
+  static const String white_logo = 'assets/logo/white_logo.png';
+
+
+
+
+
+
+
+
+
+
+
   static const String onoarding_one = 'assets/images/onboarding_one.png';
   static const String onboarding_two = 'assets/images/onboarding_two.png';
   static const String onboarding_three = 'assets/images/onboarding_three.png';
-  static const String onboarding_four = 'assets/images/onboarding_four.png';
   static const String subscription = 'assets/images/subscription.png';
   static const String user ='assets/icons/user.png';
 
@@ -29,4 +40,5 @@ class ImagesUrls {
   static const String more = "assets/images/banner_dots.png";
   static const String dr = "assets/images/dr.png";
   static const String scan = "assets/images/scan.png";
+  static const String button = 'assets/images/button.png';
 }

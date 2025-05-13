@@ -7,7 +7,7 @@ class AppColor {
   static const Color tertiary = Color(0xFF9DCEFF);
   static const Color tertiary_light = Color(0xFFf9ebf8);
   static const Color purple = Color(0xFF92A3FD);
-  static const Color blue = Color(0xFF9DCEFF);
+  static const Color blue = Color(0xff1C90C6);
   static const Color grey = Color(0xFFDDDADA);
   static const Color green = Color(0xFF4CAF50);
   static const Color black = Color(0xFF222222);

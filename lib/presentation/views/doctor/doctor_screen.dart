@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:intellident_ai/presentation/views/doctor/dr_profile_screen.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/image_urls.dart';
 
@@ -162,7 +163,9 @@ class DentistCard extends StatelessWidget {
                     // Second Button
                     Expanded(
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                         Navigator.push(context, MaterialPageRoute(builder: (context)=>DoctorProfileScreen()));
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue,
                           padding: const EdgeInsets.symmetric(
