@@ -48,23 +48,33 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text("Hey there,", style: AppTextStyles.font24),
-                    Text("Welcome Back", style: AppTextStyles.font16),
+                    Text(
+                      "Hey there,",
+                      style: AppTextStyles.font24.copyWith(
+                        color: AppColor.blue,
+                      ),
+                    ),
+                    Text(
+                      "Welcome Back",
+                      style: AppTextStyles.font16.copyWith(
+                        color: AppColor.blue,
+                      ),
+                    ),
                     30.height,
                     CustomFieldComponents(
                       hint: "Email",
                       controller: emailController,
-                      prefixIcon: "assets/icons/Message.png",
+                      prefixIcon: ImagesUrls.email,
                     ),
                     15.height,
                     CustomFieldComponents(
                       hint: "Password",
                       controller: passwordController,
-                      prefixIcon: "assets/icons/Lock.png",
-                      suffixIcon: "assets/icons/hide_password.png",
+                      prefixIcon: ImagesUrls.password,
+                      suffixIcon: ImagesUrls.eye,
                     ),
                     15.height,
-                    Text('Forgot your password?', style: AppTextStyles.forgotPasswordText),
+                    Text('Forgot your password?', style: AppTextStyles.font14),
                     20.height,
                     PrimaryButton(
                       onTap: () {
@@ -73,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       childWidget: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Login", style: AppTextStyles.ButtonText),
+                          Text("Login", style: AppTextStyles.buttonText),
                         ],
                       ),
                       bgColor: AppColor.blue,
@@ -82,12 +92,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     120.height,
                     Row(
                       children: [
-                        Expanded(child: Divider(color: AppColor.grey, thickness: 1)),
+                        const Expanded(
+                          child: Divider(color: AppColor.grey, thickness: 1),
+                        ),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 8),
                           child: Text("Or", style: AppTextStyles.font16),
                         ),
-                        Expanded(child: Divider(color: AppColor.grey, thickness: 1)),
+                        const Expanded(
+                          child: Divider(color: AppColor.grey, thickness: 1),
+                        ),
                       ],
                     ),
                     20.height,
@@ -103,10 +117,18 @@ class _LoginScreenState extends State<LoginScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Dont have an account yet? ", style: AppTextStyles.font16),
+                        Text(
+                          "Dont have an account yet? ",
+                          style: AppTextStyles.font16,
+                        ),
                         GestureDetector(
                           onTap: () {},
-                          child: Text("Register", style: AppTextStyles.font16),
+                          child: Text(
+                            "Register",
+                            style: AppTextStyles.font16.copyWith(
+                              color: AppColor.blue,
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -124,9 +146,9 @@ class _LoginScreenState extends State<LoginScreen> {
 Widget socialIcon(String assetPath) {
   return Container(
     width: 48.w,
-    height: 48.w,
+    height: 48.h,
     decoration: BoxDecoration(
-      color: Colors.white,
+      color: AppColor.white,
       borderRadius: BorderRadius.circular(12.r),
       border: Border.all(color: AppColor.sec_text),
     ),

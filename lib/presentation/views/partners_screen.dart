@@ -1,9 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart'; // Import the carousel_slider package
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intellident_ai/core/constants/image_urls.dart';
 import 'package:intellident_ai/core/utils/extension.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../core/constants/app_colors.dart';
+import '../../core/constants/fonts.dart';
 
-class PartnersScreen extends StatelessWidget {
+class PartnersScreen extends StatefulWidget {
+  const PartnersScreen({super.key});
+
+  @override
+  State<PartnersScreen> createState() => _PartnersScreenState();
+}
+
+class _PartnersScreenState extends State<PartnersScreen> {
+  final PageController _pageController = PageController();
+
+  int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,22 +26,17 @@ class PartnersScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: AppColor.primary,
         // AppBar color
-        title: Image.asset(
-          'assets/logo/intellident_logo.png',
-          // Replace with your logo asset path
-          height: 40, // Adjust the logo height as needed
+        title: Text(
+          "Products",
+          style: AppTextStyles.font18.copyWith(color: AppColor.blue),
         ),
         actions: [
-          IconButton(
-            icon: Image.asset(
-              'assets/icons/notification_icon.png',
-              // Replace with your asset image path
-              width: 30,
-              height: 30,
+          Padding(
+            padding: const EdgeInsets.only(right: 12.0),
+            child: IconButton(
+              icon: Image.asset(ImagesUrls.notification, width: 30, height: 30),
+              onPressed: () {},
             ),
-            onPressed: () {
-              // Notification action
-            },
           ),
         ],
         elevation: 0.1,
@@ -61,39 +71,26 @@ class PartnersScreen extends StatelessWidget {
       body: Column(
         children: [
           20.height,
-          const Text(
-            "Products",
-            style: TextStyle(
-              fontSize: 26,
-              fontWeight: FontWeight.w900,
-              color: AppColor.blue,
-            ),
-          ),
-          20.height,
-          // CarouselSlider
           CarouselSlider(
             items: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                // Set the border radius here
+                borderRadius: BorderRadius.circular(10.r),
                 child: Image.asset(
-                  'assets/images/home_scan.png', // First image
+                  ImagesUrls.home_scan,
                   fit: BoxFit.cover,
                   width: double.infinity,
                 ),
               ),
               ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                // Set the border radius here
+                borderRadius: BorderRadius.circular(10.r),
                 child: Image.asset(
-                  'assets/images/home_scan2.png', // Second image
+                  ImagesUrls.home_scan2,
                   fit: BoxFit.cover,
                   width: double.infinity,
                 ),
               ),
               ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                // Set the border radius here
+                borderRadius: BorderRadius.circular(10.r),
                 child: Image.asset(
                   'assets/images/home_scan2.png', // Third image
                   fit: BoxFit.cover,
@@ -102,16 +99,37 @@ class PartnersScreen extends StatelessWidget {
               ),
             ],
             options: CarouselOptions(
-              height: 200,
+              height: 160.h,
               autoPlay: true,
               enlargeCenterPage: true,
               aspectRatio: 16 / 9,
               autoPlayInterval: const Duration(seconds: 3),
               autoPlayAnimationDuration: const Duration(milliseconds: 800),
               scrollPhysics: const BouncingScrollPhysics(),
+              onPageChanged: (index, reason) {
+                setState(() {
+                  _currentIndex = index;
+                });
+              },
             ),
           ),
           20.height,
+          // Custom Dots Indicator using SmoothPageIndicator
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: SmoothPageIndicator(
+              controller: _pageController,
+              count: 3, // The number of images in the carousel
+              effect: ExpandingDotsEffect(
+                dotWidth: 10,
+                dotHeight: 10,
+                spacing: 8,
+                activeDotColor: AppColor.blue,
+                dotColor: Colors.grey.shade400,
+                expansionFactor: 3,
+              ),
+            ),
+          ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -124,7 +142,7 @@ class PartnersScreen extends StatelessWidget {
                 itemCount: 9,
                 itemBuilder: (context, index) {
                   return Card(
-                    elevation: 4, 
+                    elevation: 4,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),

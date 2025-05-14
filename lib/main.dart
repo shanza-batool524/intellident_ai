@@ -7,13 +7,11 @@ import 'package:intellident_ai/presentation/views/authentication/profile_complet
 import 'package:intellident_ai/presentation/views/authentication/signup_screen.dart';
 import 'package:intellident_ai/presentation/views/dashboard/dashboard_screen.dart';
 import 'package:intellident_ai/presentation/views/doctor/doctor_screen.dart';
-import 'package:intellident_ai/presentation/views/dr_physicians_screen.dart';
-import 'package:intellident_ai/presentation/views/navigation/bottom_navigation_screen.dart';
+import 'package:intellident_ai/presentation/views/doctor/dr_profile_screen.dart';
+import 'package:intellident_ai/presentation/views/bottom_navigation_screen.dart';
 import 'package:intellident_ai/presentation/views/partners_screen.dart';
 import 'package:intellident_ai/presentation/views/pro_subscription_screen.dart';
-import 'package:intellident_ai/presentation/views/splash/splash_disclaimer_screen.dart';
-import 'package:intellident_ai/presentation/views/splash/splash_screen.dart';
-import 'package:intellident_ai/presentation/views/test.dart';
+import 'package:intellident_ai/presentation/views/splash_screen.dart';
 
 import 'core/constants/app_colors.dart';
 import 'core/routing/routers.dart';
@@ -51,15 +49,15 @@ class MyApp extends StatelessWidget {
               systemOverlayStyle: SystemUiOverlayStyle(
                 statusBarIconBrightness: Brightness.light,
                 systemNavigationBarColor: AppColor.primary,
-                statusBarColor: AppColor.primary, // status bar color
+                statusBarColor: AppColor.primary,
               ),
             ),
           ),
           debugShowCheckedModeBanner: false,
           title: 'Intellident AI',
-          // getPages: AppRoutes.appRoute(),
-          // initialRoute: RouteName.splashScreen,
-          home: OnboardingScreen(),
+          getPages: AppRoutes.appRoute(),
+          initialRoute: RouteName.splashScreen,
+          // home: LoginScreen(),
         );
       },
     );

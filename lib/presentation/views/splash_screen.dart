@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:intellident_ai/core/constants/fonts.dart';
 import 'package:intellident_ai/core/utils/extension.dart';
 
-import '../../../core/constants/app_colors.dart';
-import '../../../core/constants/image_urls.dart';
-import '../../../core/routing/routers_name.dart';
-import '../../../general_widgets/primary_button.dart';
+import '../../core/constants/app_colors.dart';
+import '../../core/constants/image_urls.dart';
+import '../../core/routing/routers_name.dart';
+import '../../general_widgets/primary_button.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -26,26 +27,34 @@ class _SplashScreenOneState extends State<SplashScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(ImagesUrls.logo,),
+                Image.asset(ImagesUrls.logo),
                 32.height,
                 Text(
                   textAlign: TextAlign.center,
                   "Assess your dental health conveniently from your mobile devices, without the need for immediate physical visits to a dental professional.",
-                  style: TextStyle(fontSize: 18.sp, color: AppColor.text),
+                  style: AppTextStyles.font18.copyWith(
+                    color: AppColor.text,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
-
-                64.height,
+                40.height,
+                Text(
+                  textAlign: TextAlign.center,
+                  "Disclaimer: This app is not intended to supplement or be a substitute for the expertise and judgment of your dentist /doctor or any other healthcare professional.",
+                  style: AppTextStyles.font12.copyWith(
+                    fontStyle: FontStyle.italic,
+                    color: AppColor.text,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                10.height,
                 PrimaryButton(
                   onTap: () {
-                    Get.toNamed(RouteName.splashDisclaimerScreen);
+                    Get.toNamed(RouteName.onboardingScreen);
                   },
                   childWidget: Text(
                     "Get Started",
-                    style: TextStyle(
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.bold,
-                      color: AppColor.primary,
-                    ),
+                    style: AppTextStyles.buttonText,
                   ),
                   bgColor: AppColor.blue,
                   gradient: false,

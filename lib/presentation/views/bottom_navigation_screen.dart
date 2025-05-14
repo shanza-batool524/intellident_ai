@@ -3,9 +3,11 @@ import 'package:intellident_ai/presentation/views/dashboard/dashboard_screen.dar
 import 'package:intellident_ai/presentation/views/doctor/doctor_screen.dart';
 import 'package:intellident_ai/presentation/views/partners_screen.dart';
 
-import '../../../core/constants/app_colors.dart';
+import '../../core/constants/app_colors.dart';
 
 class BottomNavigationScreen extends StatefulWidget {
+  const BottomNavigationScreen({super.key});
+
   @override
   _BottomNavigationScreenState createState() => _BottomNavigationScreenState();
 }
@@ -13,13 +15,12 @@ class BottomNavigationScreen extends StatefulWidget {
 class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   int _selectedIndex = 0;
 
-  // List of pages for each navigation item
   List<Widget> _pages = [
-    DashboardScreen(),
-    DoctorScreen(),
-    DashboardScreen(),
+    const DashboardScreen(),
+    const DoctorScreen(),
+    const DashboardScreen(),
     PartnersScreen(),
-    DashboardScreen(),
+    const PartnersScreen(),
   ];
 
   // Update the index when an item is selected
@@ -32,38 +33,28 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_selectedIndex], // Display selected page
+      body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        type: BottomNavigationBarType.fixed, // To display all items in one line
-        backgroundColor: AppColor.blue, // Background color of the navigation bar
-        selectedItemColor: Colors.white, // Color for selected item
-        unselectedItemColor: Colors.white60, // Color for unselected items
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: AppColor.blue,
+        selectedItemColor: AppColor.white,
+        unselectedItemColor: Colors.white60,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.local_activity),
-            label: 'Activity',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add),
-            label: 'Add',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Partners',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Profile',
+            label: 'Doctors',
           ),
+          BottomNavigationBarItem(icon: Icon(Icons.document_scanner), label: 'Scan'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.book),
+            label: 'Blogs',
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.shopping_bag), label: 'Products'),
         ],
       ),
     );
   }
 }
-

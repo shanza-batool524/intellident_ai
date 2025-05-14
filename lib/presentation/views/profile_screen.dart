@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:intellident_ai/core/utils/extension.dart';
 
-import '../../../core/constants/app_colors.dart';
-import '../../../core/constants/image_urls.dart';
-import '../../../core/routing/routers_name.dart';
-import '../../../general_widgets/primary_button.dart';
+import '../../core/constants/app_colors.dart';
+import '../../core/constants/image_urls.dart';
+import '../../core/routing/routers_name.dart';
+import '../../general_widgets/primary_button.dart';
 
 
 class ProfileScreen extends StatefulWidget {

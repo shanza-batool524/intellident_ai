@@ -28,7 +28,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 50.0,bottom: 50.0),
+            padding: const EdgeInsets.only(top: 50.0, bottom: 50.0),
             child: Image.asset(
               ImagesUrls.white_logo,
               width: 250.w,
@@ -36,9 +36,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
 
+          // Container holding the PageView
           Container(
             height: 450.h,
-           child: PageView(
+            child: PageView(
               controller: _pageController,
               onPageChanged: (index) {
                 setState(() {
@@ -74,6 +75,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
 
+          30.height,
+          // SmoothPageIndicator (Page Dots)
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: SmoothPageIndicator(
@@ -89,6 +92,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
           ),
+
           Padding(
             padding: const EdgeInsets.all(16.0),
             child:
@@ -156,7 +160,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     required String description,
   }) {
     return Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 35.w),
+      padding: EdgeInsets.symmetric(horizontal: 35.w),
       child: Container(
         // width: 350.w,
         // height: 450.h,

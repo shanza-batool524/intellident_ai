@@ -1,114 +1,101 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intellident_ai/core/constants/image_urls.dart';
+import 'package:intellident_ai/core/utils/extension.dart';
 
 import '../../../core/constants/app_colors.dart';
+import '../../../core/constants/fonts.dart';
 
 class DoctorProfileScreen extends StatelessWidget {
+  const DoctorProfileScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(
-          color: AppColor.blue,
-        ),
         centerTitle: true,
-        backgroundColor: AppColor.white, // AppBar color
-        title: const Text('Dr. Fareeda Nikhat',style: TextStyle(color: AppColor.blue),),
+        backgroundColor: AppColor.primary,
+        // AppBar color
+        title: Text(
+          "Doctor's Profile",
+          style: AppTextStyles.font18.copyWith(color: AppColor.blue),
+        ),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.favorite_border,color: AppColor.blue),
-            onPressed: () {
-              // Handle favorite icon action
-            },
-          ),    IconButton(
-            icon: const Icon(Icons.share,color: AppColor.blue),
-            onPressed: () {
-              // Handle favorite icon action
-            },
+          Padding(
+            padding: const EdgeInsets.only(right: 12.0),
+            child: IconButton(
+              icon: Image.asset(ImagesUrls.notification, width: 30, height: 30),
+              onPressed: () {},
+            ),
           ),
         ],
         elevation: 0.1,
-        shadowColor: AppColor.white,
+        shadowColor: AppColor.black,
       ),
-      body: SingleChildScrollView( // Wrap the body in a scroll view
+
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // Profile Picture
             CircleAvatar(
-              radius: 80,  // Adjust size of the circle
-              backgroundImage: const AssetImage('assets/images/doctor.png'), // Replace with the doctor's image path
+              radius: 80.r,
+              backgroundImage: const AssetImage('assets/images/doctor.png'),
             ),
-            const SizedBox(height: 16),
-
-            // Doctor Info Card
+            16.height,
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: Colors.white,  // White background
-                borderRadius: BorderRadius.circular(15),
-                boxShadow: [BoxShadow(blurRadius: 5, color: Colors.grey.withOpacity(0.2))], // Soft shadow
+                color: AppColor.white,
+                borderRadius: BorderRadius.circular(15.r),
+                boxShadow: const [
+                  BoxShadow(blurRadius: 5, color: Color(0x33B0B0B0)),
+                ], // Soft shadow
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Doctor's Name
-                  const Text(
-                    'Dr. Fareeda Nikhat',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  const Text(
+                  Text('Dr. Fareeda Nikhat', style: AppTextStyles.font20),
+                  4.height,
+                  Text(
                     'Women\'s Health, Fetal Medicine',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.grey,
-                    ),
+                    style: AppTextStyles.font16,
                   ),
-                  const SizedBox(height: 8),
-                  const Text(
-                    'Latifa Hospital - Dubai',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.grey,
-                    ),
-                  ),
+                  8.height,
+                  Text('Latifa Hospital - Dubai', style: AppTextStyles.font16),
                 ],
               ),
             ),
-            const SizedBox(height: 16),
-
+            16.height,
             // Contact Info Section
             Container(
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: Colors.grey[100],  // Light grey background
+                color: Colors.grey[100],
                 borderRadius: BorderRadius.circular(15),
-                boxShadow: [BoxShadow(blurRadius: 5, color: Colors.grey.withOpacity(0.2))], // Soft shadow
+                boxShadow: const [
+                  BoxShadow(blurRadius: 5, color: Color(0x33B0B0B0)),
+                ], // Soft shadow
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Contact number and email row
                   Row(
                     children: [
-                      const Icon(Icons.phone, color: Colors.blue),
-                      const SizedBox(width: 8),
+                      const Icon(Icons.phone, color: AppColor.blue),
+                      8.width,
                       const Text('04 6545434'),
                     ],
                   ),
-                  const SizedBox(height: 12),
+                  12.height,
                   Row(
                     children: [
                       const Icon(Icons.email, color: Colors.blue),
-                      const SizedBox(width: 8),
+                      8.width,
                       const Text('fnikhat@latifahosp.ae'),
                     ],
                   ),
-                  const Divider(height: 30, color: Colors.black26),
+                  const Divider(height: 30, color: AppColor.black),
 
                   // Languages Known section
                   const Text(
@@ -116,8 +103,7 @@ class DoctorProfileScreen extends StatelessWidget {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const Text('Arabic, Hindi, Urdu, English'),
-                  const Divider(height: 30, color: Colors.black26),
-
+                  const Divider(height: 30, color: AppColor.black),
                   // Location section
                   const Text(
                     'Location',
@@ -127,7 +113,7 @@ class DoctorProfileScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 16),
+            16.height,
           ],
         ),
       ),

@@ -8,13 +8,10 @@ import '../../presentation/views/authentication/profile_completion_screen.dart';
 import '../../presentation/views/authentication/signup_screen.dart';
 import '../../presentation/views/dashboard/dashboard_screen.dart';
 import '../../presentation/views/dashboard/notifications/notification_screen.dart';
-import '../../presentation/views/interests/interests_selection_screen.dart';
-import '../../presentation/views/interests/problem_specifics_screen.dart';
-import '../../presentation/views/navigation/bottom_navigation_screen.dart';
+import '../../presentation/views/bottom_navigation_screen.dart';
 import '../../presentation/views/pro_subscription_screen.dart';
-import '../../presentation/views/profile/profile_screen.dart';
-import '../../presentation/views/splash/splash_disclaimer_screen.dart';
-import '../../presentation/views/splash/splash_screen.dart';
+import '../../presentation/views/profile_screen.dart';
+import '../../presentation/views/splash_screen.dart';
 
 // import '../views/splash_screen.dart';
 
@@ -24,14 +21,7 @@ class AppRoutes {
       name: RouteName.splashScreen,
       page: () => const SplashScreen(),
     ),
-    GetPage(
-      name: RouteName.interestSelectionScreen,
-      page: () => const InterestSelectionScreen(),
-    ),
-    GetPage(
-      name: RouteName.problemSpecificsScreen,
-      page: () => const ProblemSpecificsScreen(),
-    ),GetPage(
+ GetPage(
       name: RouteName.proSubscriptionScreen,
       page: () => const ProSubscriptionScreen(),
     ),GetPage(
@@ -42,7 +32,7 @@ class AppRoutes {
       page: () => const LoginScreen(),
     ),GetPage(
       name: RouteName.completeProfileScreen,
-      page: () => const CompleteProfileScreen(),
+      page: () =>  CompleteProfileScreen(),
     ),GetPage(
       name: RouteName.profileScreen,
       page: () => const ProfileScreen(),
@@ -55,9 +45,6 @@ class AppRoutes {
     ),GetPage(
       name: RouteName.notificationScreen,
       page: () => const NotificationScreen(),
-    ),GetPage(
-      name: RouteName.splashDisclaimerScreen,
-      page: () => const SplashDisclaimerScreen(),
     ),GetPage(
       name: RouteName.doctorScreen,
       page: () => const DoctorScreen(),

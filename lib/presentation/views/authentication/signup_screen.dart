@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:intellident_ai/core/constants/fonts.dart';
 import 'package:intellident_ai/core/utils/extension.dart';
 
 import '../../../core/constants/app_colors.dart';
@@ -38,12 +39,12 @@ class _SignupScreenState extends State<SignupScreen> {
               width: double.infinity,
               color: AppColor.blue,
               child: Align(
-                alignment: Alignment.center, // Center the image within the container
+                alignment: Alignment.center,
                 child: Image.asset(
-                  "assets/logo/white_logo.png",
-                  width: 250.w,  // Custom width
-                  height: 72.h, // Custom height
-                  fit: BoxFit.contain, // Optional: Use BoxFit.cover or BoxFit.fill if necessary
+                  ImagesUrls.white_logo,
+                  width: 250.w,
+                  height: 72.h,
+                  fit: BoxFit.contain,
                 ),
               ),
             ),
@@ -54,15 +55,9 @@ class _SignupScreenState extends State<SignupScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-        
-                    // 60.height,
                     Text(
                       "Create an Account",
-                      style: TextStyle(
-                        fontSize: 26.sp,
-                        fontWeight: FontWeight.w900,
-                        color: AppColor.blue,
-                      ),
+                      style:AppTextStyles.font26.copyWith(color: AppColor.blue)
                     ),
                     20.height,
                     CustomFieldComponents(
@@ -106,19 +101,19 @@ class _SignupScreenState extends State<SignupScreen> {
                           child: RichText(
                             text: TextSpan(
                               style: TextStyle(fontSize: 12.sp, color: AppColor.text),
-                              children: [
-                                const TextSpan(text: 'By continuing you accept our '),
+                              children: const [
+                                TextSpan(text: 'By continuing you accept our '),
                                 TextSpan(
                                   text: 'Privacy Policy',
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     color: AppColor.blue,
                                     decoration: TextDecoration.underline,
                                   ),
                                 ),
-                                const TextSpan(text: ' and '),
+                                TextSpan(text: ' and '),
                                 TextSpan(
                                   text: 'Term of Use',
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     color: AppColor.blue,
                                     decoration: TextDecoration.underline,
                                   ),
@@ -136,11 +131,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       },
                       childWidget: Text(
                         "Register",
-                        style: TextStyle(
-                          fontSize: 18.sp,
-                          color: AppColor.primary,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: AppTextStyles.font18.copyWith(color: AppColor.primary)
                       ),
                       bgColor: AppColor.blue,
                       gradient: false,
@@ -148,15 +139,15 @@ class _SignupScreenState extends State<SignupScreen> {
                     20.height,
                     Row(
                       children: [
-                        Expanded(child: Divider(color: AppColor.grey, thickness: 1)),
+                        const Expanded(child: Divider(color: AppColor.grey, thickness: 1)),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 8),
                           child: Text(
                             "Or",
-                            style: TextStyle(fontSize: 14.sp, color: AppColor.black),
+                            style: AppTextStyles.font14,
                           ),
                         ),
-                        Expanded(child: Divider(color: AppColor.grey, thickness: 1)),
+                        const Expanded(child: Divider(color: AppColor.grey, thickness: 1)),
                       ],
                     ),
                     20.height,
@@ -180,11 +171,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           onTap: () {},
                           child: Text(
                             "Login",
-                            style: TextStyle(
-                              fontSize: 14.sp,
-                              color: AppColor.blue, // purple color
-                              fontWeight: FontWeight.w500,
-                            ),
+                            style:  AppTextStyles.font14.copyWith(color: AppColor.blue)
                           ),
                         ),
                       ],
