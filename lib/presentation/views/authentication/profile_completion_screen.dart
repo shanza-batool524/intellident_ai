@@ -143,7 +143,7 @@ class CompleteProfileScreen extends StatelessWidget {
                     onTap: () {
                       Get.toNamed(RouteName.loginScreen);
                     },
-                    childWidget: Text("Continue", style: AppTextStyles.buttonText),
+                    childWidget: Text("Continue", style: TextStyle(color: AppColor.white, fontSize: 18.sp, fontWeight: FontWeight.bold)),
                     bgColor: AppColor.blue,
                     gradient: false,
                   ),

@@ -126,7 +126,7 @@ class _ProSubscriptionScreenState extends State<ProSubscriptionScreen> {
                     gradient: false,
                     childWidget: Text(
                       "Subscribe",
-                      style: AppTextStyles.buttonText,
+                      style: TextStyle(color: AppColor.white, fontSize: 18.sp, fontWeight: FontWeight.bold),
                     ),
                   ),
                   10.height,

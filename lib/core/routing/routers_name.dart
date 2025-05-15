@@ -10,10 +10,11 @@ class RouteName {
   static const String signupScreen = '/signupScreen';
   static const String loginScreen = '/loginScreen';
   static const String completeProfileScreen = '/completeProfileScreen';
-  static const String profileScreen = '/profileScreen';
+  static const String userprofileScreen = '/userprofileScreen';
   static const String dashboardScreen = '/dashboardScreen';
   static const String bottomNavigationScreen = '/bottomNavigationScreen';
   static const String notificationScreen = '/notificationScreen';
-  static const String splashDisclaimerScreen = '/splashDisclaimerScreen';
   static const String doctorScreen = '/doctorScreen';
+  static const String aboutScreen = '/aboutScreen';
+  static const String privacyPolicyScreen = '/privacyPolicyScreen';
 }

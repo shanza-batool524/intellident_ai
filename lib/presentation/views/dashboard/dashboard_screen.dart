@@ -111,19 +111,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8),
-                              child: PrimaryButton(
-                                width: 110.w,
-                                height: 40.h,
-                                onTap: () {},
-                                bgColor: AppColor.blue,
-                                gradient: false,
-                                childWidget: Text(
-                                  "Scan Now",
-                                  style: AppTextStyles.font14.copyWith(
-                                    color: AppColor.white,
-                                  ),
-                                ),
-                              ),
+                              child: Image.asset(ImagesUrls.scan,height: 130,width:130,)
                             ),
                           ],
                         ),
@@ -248,6 +236,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   ],
                 ),
                 20.height,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Blogs",style: AppTextStyles.font20,),
+                    Text("View All",
+                      style: AppTextStyles.font16,),
+                  ],
+                ),
+                10.height,
                 SizedBox(
                   height: 220.h,
                   child: ListView.builder(

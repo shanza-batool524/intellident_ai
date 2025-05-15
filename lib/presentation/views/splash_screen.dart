@@ -54,7 +54,7 @@ class _SplashScreenOneState extends State<SplashScreen> {
                   },
                   childWidget: Text(
                     "Get Started",
-                    style: AppTextStyles.buttonText,
+                    style:TextStyle(color: AppColor.white, fontSize: 18.sp, fontWeight: FontWeight.bold),
                   ),
                   bgColor: AppColor.blue,
                   gradient: false,

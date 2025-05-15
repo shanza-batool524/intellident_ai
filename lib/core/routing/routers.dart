@@ -2,6 +2,8 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:intellident_ai/core/routing/routers_name.dart';
 import 'package:intellident_ai/presentation/views/onboarding_screen.dart';
 import 'package:intellident_ai/presentation/views/doctor/doctor_screen.dart';
+import 'package:intellident_ai/presentation/views/terms/about_screen.dart';
+import 'package:intellident_ai/presentation/views/terms/privacy_policy_screen.dart';
 
 import '../../presentation/views/authentication/login_screen.dart';
 import '../../presentation/views/authentication/profile_completion_screen.dart';
@@ -10,8 +12,8 @@ import '../../presentation/views/dashboard/dashboard_screen.dart';
 import '../../presentation/views/dashboard/notifications/notification_screen.dart';
 import '../../presentation/views/bottom_navigation_screen.dart';
 import '../../presentation/views/pro_subscription_screen.dart';
-import '../../presentation/views/profile_screen.dart';
 import '../../presentation/views/splash_screen.dart';
+import '../../presentation/views/user_profile_screen.dart';
 
 // import '../views/splash_screen.dart';
 
@@ -34,8 +36,8 @@ class AppRoutes {
       name: RouteName.completeProfileScreen,
       page: () =>  CompleteProfileScreen(),
     ),GetPage(
-      name: RouteName.profileScreen,
-      page: () => const ProfileScreen(),
+      name: RouteName.userprofileScreen,
+      page: () => const UserProfileScreen(),
     ),GetPage(
       name: RouteName.dashboardScreen,
       page: () => const DashboardScreen(),
@@ -51,6 +53,12 @@ class AppRoutes {
     ),GetPage(
       name: RouteName.onboardingScreen,
       page: () => const OnboardingScreen(),
+    ),GetPage(
+      name: RouteName.aboutScreen,
+      page: () => const AboutScreen(),
+    ),GetPage(
+      name: RouteName.privacyPolicyScreen,
+      page: () => const PrivacyPolicyScreen(),
     ),
   ];
 }

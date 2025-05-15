@@ -131,7 +131,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       },
                       childWidget: Text(
                         "Register",
-                        style: AppTextStyles.font18.copyWith(color: AppColor.primary)
+                        style: TextStyle(color: AppColor.white, fontSize: 18.sp, fontWeight: FontWeight.bold)
                       ),
                       bgColor: AppColor.blue,
                       gradient: false,

@@ -3,6 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intellident_ai/core/constants/image_urls.dart';
 import 'package:intellident_ai/core/utils/extension.dart';
+import 'package:intellident_ai/general_widgets/custom_drawer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/fonts.dart';
@@ -42,32 +43,7 @@ class _PartnersScreenState extends State<PartnersScreen> {
         elevation: 0.1,
         shadowColor: AppColor.black,
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            const DrawerHeader(
-              decoration: BoxDecoration(color: Colors.blue),
-              child: Text(
-                'Menu',
-                style: TextStyle(color: Colors.white, fontSize: 24),
-              ),
-            ),
-            ListTile(
-              title: const Text('Item 1'),
-              onTap: () {
-                // Handle tap on item 1
-              },
-            ),
-            ListTile(
-              title: const Text('Item 2'),
-              onTap: () {
-                // Handle tap on item 2
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: CustomDrawer(),
       body: Column(
         children: [
           20.height,

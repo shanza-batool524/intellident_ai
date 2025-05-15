@@ -83,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       childWidget: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Login", style: AppTextStyles.buttonText),
+                          Text("Login", style: TextStyle(color: AppColor.white, fontSize: 18.sp, fontWeight: FontWeight.bold),),
                         ],
                       ),
                       bgColor: AppColor.blue,
