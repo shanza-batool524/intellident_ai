@@ -241,7 +241,10 @@ class _CustomDrawerState extends State<CustomDrawer> {
           ListTile(
             leading: const Icon(Icons.favorite, color: Colors.blue),
             title: const Text("Favourites"),
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(RouteName.favouritesScreen);
+
+            },
           ),
           ListTile(
             leading: const Icon(Icons.person_add, color: Colors.blue),

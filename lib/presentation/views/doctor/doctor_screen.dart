@@ -9,6 +9,7 @@ import 'package:intellident_ai/presentation/views/doctor/dr_profile_screen.dart'
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/fonts.dart';
 import '../../../core/constants/image_urls.dart';
+import '../../../core/routing/routers_name.dart';
 import '../../../general_widgets/dentist_card.dart';
 
 class DoctorScreen extends StatefulWidget {
@@ -42,6 +43,8 @@ class _DoctorScreenState extends State<DoctorScreen> {
                 height: 30,
               ),
               onPressed: () {
+                Get.toNamed(RouteName.notificationScreen);
+
               },
             ),
           ),
@@ -63,6 +66,31 @@ class _DoctorScreenState extends State<DoctorScreen> {
                 controller: searchController,
               ),
             ),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.lightBlue.shade100,
+                borderRadius: BorderRadius.circular(12.r),
+              ),
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '1044',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 28,
+                    ),
+                  ),
+                  Text(
+                    'Doctors & Physicians found',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ],
+              ),
+            ),
+             20.height,
             Expanded(
               child: ListView.builder(
                 itemCount: 5,

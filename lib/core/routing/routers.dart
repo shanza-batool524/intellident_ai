@@ -1,5 +1,6 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:intellident_ai/core/routing/routers_name.dart';
+import 'package:intellident_ai/presentation/views/favourites_screen.dart';
 import 'package:intellident_ai/presentation/views/onboarding_screen.dart';
 import 'package:intellident_ai/presentation/views/doctor/doctor_screen.dart';
 import 'package:intellident_ai/presentation/views/terms/about_screen.dart';
@@ -59,6 +60,9 @@ class AppRoutes {
     ),GetPage(
       name: RouteName.privacyPolicyScreen,
       page: () => const PrivacyPolicyScreen(),
+    ),GetPage(
+      name: RouteName.favouritesScreen,
+      page: () =>  FavouritesScreen(),
     ),
   ];
 }

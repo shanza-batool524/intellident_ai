@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:intellident_ai/core/utils/extension.dart';
 
 import '../../../../core/constants/app_colors.dart';
+import '../../../../core/constants/fonts.dart';
 import '../../../../core/constants/image_urls.dart';
 
 
@@ -52,32 +53,18 @@ class _NotificationScreenState extends State<NotificationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColor.primary,
-        elevation: 0,
-        iconTheme: const IconThemeData(color: AppColor.secondary),
         centerTitle: true,
-        surfaceTintColor: Colors.transparent,
-        automaticallyImplyLeading: false,
-        leading: IconButton(
-          onPressed: () {
-            Get.back<void>();
-          },
-          icon: Image.asset(ImagesUrls.back),
-        ),
-        actions: [
-          IconButton(onPressed: () {}, icon: Image.asset(ImagesUrls.more)),
-          30.width,
-        ],
+        backgroundColor: AppColor.primary,
+        // AppBar color
         title: Text(
-          'Notification',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 16.sp,
-            fontWeight: FontWeight.bold,
-            color: AppColor.black,
-          ),
+          "Notifications",
+          style: AppTextStyles.font18.copyWith(color: AppColor.blue),
         ),
+
+        elevation: 0.1,
+        shadowColor: AppColor.black,
       ),
+
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: ListView.separated(

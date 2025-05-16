@@ -6,6 +6,7 @@ import 'package:intellident_ai/presentation/views/authentication/login_screen.da
 import 'package:intellident_ai/presentation/views/authentication/profile_completion_screen.dart';
 import 'package:intellident_ai/presentation/views/authentication/signup_screen.dart';
 import 'package:intellident_ai/presentation/views/dashboard/dashboard_screen.dart';
+import 'package:intellident_ai/presentation/views/dashboard/notifications/notification_screen.dart';
 import 'package:intellident_ai/presentation/views/doctor/doctor_screen.dart';
 import 'package:intellident_ai/presentation/views/doctor/dr_profile_screen.dart';
 import 'package:intellident_ai/presentation/views/bottom_navigation_screen.dart';
@@ -14,6 +15,7 @@ import 'package:intellident_ai/presentation/views/partners_screen.dart';
 import 'package:intellident_ai/presentation/views/pro_subscription_screen.dart';
 import 'package:intellident_ai/presentation/views/splash_screen.dart';
 import 'package:intellident_ai/presentation/views/user_profile_screen.dart';
+import 'package:intellident_ai/test.dart';
 
 import 'core/constants/app_colors.dart';
 import 'core/routing/routers.dart';
@@ -59,7 +61,7 @@ class MyApp extends StatelessWidget {
           title: 'Intellident AI',
           // getPages: AppRoutes.appRoute(),
           // initialRoute: RouteName.splashScreen,
-          home: FavouritesScreen(),
+          home: ColorPaletteScreen(),
         );
       },
     );

@@ -5,6 +5,7 @@ import 'package:intellident_ai/core/utils/extension.dart';
 
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/image_urls.dart';
+import '../../../core/routing/routers_name.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
@@ -30,6 +31,7 @@ class AboutScreen extends StatelessWidget {
                 height: 30,
               ),
               onPressed: () {
+                Get.toNamed(RouteName.notificationScreen);
               },
             ),
           ),

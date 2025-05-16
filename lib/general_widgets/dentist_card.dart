@@ -16,109 +16,31 @@ class DentistCard extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: AppColor.white,
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: AppColor.blue,
-          width: 0.5,
-        ),
+        borderRadius: BorderRadius.circular(10.r),
+        border: Border.all(color: AppColor.black, width: 0.5),
       ),
       child: Row(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12.r),
-            child: Image.asset(
-              ImagesUrls.dr,
-              width: 80.w,
-              height: 140.h,
-              fit: BoxFit.cover,
-            ),
+          const CircleAvatar(radius: 30, backgroundImage: AssetImage(ImagesUrls.dr)),
+        10.width,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              3.height,
+              Text(
+                'dr. Kureha Yasmin',
+                style: AppTextStyles.font20.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              4.height,
+              Text('Specialist Dentist', style: AppTextStyles.font14), 4.height,
+              Text('Rashid Hospital', style: AppTextStyles.font14),
+
+            ],
           ),
-          16.width,
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Chip(
-                      label: const Text('Arabic, English'),
-                      backgroundColor: AppColor.white,
-                      labelStyle: const TextStyle(color: AppColor.blue),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(18.r),
-                        side: const BorderSide(color: AppColor.blue),
-                      ),
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 5,
-                        horizontal: 1,
-                      ),
-                    ),
-                  ],
-                ),
-                3.height,
-                Text(
-                  'dr. Kureha Yasmin',
-                  style: AppTextStyles.font20.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                4.height,
-                Text('Specialist Dentist', style: AppTextStyles.font14),
-                20.height,
-                Row(
-                  children: [
-                    Expanded(
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColor.white,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 16,
-                            vertical: 8,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            side: const BorderSide(color: AppColor.blue),
-                            borderRadius: BorderRadius.circular(8.r),
-                          ),
-                        ),
-                        child: const Text(
-                          '111',
-                          style: TextStyle(color: AppColor.blue),
-                        ),
-                      ),
-                    ),
-                    5.width, // Second Button
-                    Expanded(
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => DoctorProfileScreen(),
-                            ),
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColor.blue,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 16,
-                            vertical: 8,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.r),
-                          ),
-                        ),
-                        child: const Text(
-                          'View Profile',
-                          style: TextStyle(color: AppColor.white),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
+          const Spacer(),
+          const Icon(Icons.arrow_forward_ios_sharp,color: AppColor.black,)
         ],
       ),
     );

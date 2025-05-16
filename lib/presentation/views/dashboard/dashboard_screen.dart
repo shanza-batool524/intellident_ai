@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:intellident_ai/core/constants/fonts.dart';
 import 'package:intellident_ai/core/constants/image_urls.dart';
 import 'package:intellident_ai/core/utils/extension.dart';
@@ -9,6 +11,7 @@ import 'package:intellident_ai/general_widgets/custom_drawer.dart';
 import 'package:intellident_ai/presentation/views/doctor/doctor_screen.dart';
 
 import '../../../core/constants/app_colors.dart';
+import '../../../core/routing/routers_name.dart';
 import '../../../general_widgets/primary_button.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -57,6 +60,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 height: 30,
               ),
               onPressed: () {
+                Get.toNamed(RouteName.notificationScreen);
               },
             ),
           ),
